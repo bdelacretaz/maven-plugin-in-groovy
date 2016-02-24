@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ch.x42</groupId>
+  <artifactId>groovy-maven-plugin-test</artifactId>
+  <name>Testing the Groovy Mojo</name>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>ch.x42</groupId>
+        <artifactId>groovy-maven-plugin-example</artifactId>
+        <version>${project.version}</version>
+        <executions>
+          <execution>
+            <id>echo-test</id>
+            <goals>
+              <goal>echo</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <message>Does this echo plugin work?</message>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <!-- TODO the plugin should provide this dependency?? -->
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.6</version>
+            <scope>compile</scope>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
